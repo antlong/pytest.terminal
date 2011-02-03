@@ -1,0 +1,28 @@
+Improved reporting when using --collect.
+
+Now includes the docstrings for your test functions.
+
+For example:
+
+---
+
+test_Dashboard.py:
+
+TestCases:
+
+test_logging_in_as_admin:
+
+        This test will login as an admin account.
+        
+
+test__download_link:
+
+        Tests the download link on Dashboard works, and then 
+        checks that the actual download link on the firemeld page works.
+
+
+---
+
+Formats to HTML using pygments. To export, use (in terminal):
+
+py.test --collect > file_name.html
