@@ -425,10 +425,10 @@ class CollectonlyReporter:
             if collector.name == '()':
                 pass
             else:
-                print highlight(collector.name.strip() + ":", PythonConsoleLexer(), HtmlFormatter())
+                self._tw.line(highlight(collector.name.strip() + ":", PythonConsoleLexer(), HtmlFormatter()))
     
     def pytest_itemcollected(self, item):
-        print highlight(item.name + ":" + "\n" + item._obj.__doc__, PythonConsoleLexer(), HtmlFormatter())
+        self._tw.line(highlight(item.name + ":" + "\n" + item._obj.__doc__, PythonConsoleLexer(), HtmlFormatter()))
     
     def pytest_collectreport(self, report):
         if not report.passed:
